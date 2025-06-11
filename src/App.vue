@@ -1,29 +1,18 @@
 <script setup>
 import './style.css';
-import defilement from './componentss/Defilement.vue';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import { ref } from 'vue';
-
-/*const games = ref([
-  {
-    id: 1,
-    titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci atque similique qui mollitia quo nostrum aperiam autem excepturi dolorum a nobis, fuga consectetur et, sed reiciendis architecto temporibus illum eius.'
-  },
-  {
-    id: 2,
-    titre: 'The Witcher 4', 
-    contenu: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci atque similique qui mollitia quo nostrum aperiam autem excepturi dolorum a nobis, fuga consectetur et, sed reiciendis architecto temporibus illum eius.'
-  }
-]);*/
+import Index from './components/index.vue';
 </script>
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,7 +24,8 @@ import { ref } from 'vue';
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" 
+               data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </a>
             <ul class="dropdown-menu">
@@ -56,14 +46,19 @@ import { ref } from 'vue';
     </div>
   </nav>
 
-
-<defilement/>
-  
+  <!-- Votre composant Index s'affiche ici -->
+  <Index />
 </template>
 
 <style>
+body {
+  background-color: var(--background-one);
+  color: var(--text-one);
+}
+
 .navbar {
   background-color: var(--background-two);
+   z-index: 1050;
 }
 
 .navbar .nav-link,
