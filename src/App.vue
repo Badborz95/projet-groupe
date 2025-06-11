@@ -8,6 +8,7 @@
       <router-view />
     </main>
   </div>
+</template>
 <script setup>
 // Utilisation de <script setup> pour une syntaxe plus concise
 import Navbar from './components/Navbar.vue'
@@ -18,7 +19,7 @@ import Navbar from './components/Navbar.vue'
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-=======
+}
 body {
   background-color: var(--background-one);
   color: var(--text-one);
