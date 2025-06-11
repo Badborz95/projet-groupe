@@ -17,8 +17,10 @@ import Navbar from './components/Navbar.vue'
       <router-view />
   </div>
 </template>
-
-
+<script setup>
+// Utilisation de <script setup> pour une syntaxe plus concise
+import Navbar from './components/Navbar.vue'
+</script>
 
 <style>
 #app-wrapper {
