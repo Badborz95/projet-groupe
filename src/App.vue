@@ -1,14 +1,18 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import './style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+import Index from './components/index.vue';
 </script>
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,7 +24,8 @@ import './style.css';
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" 
+               data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </a>
             <ul class="dropdown-menu">
@@ -40,12 +45,20 @@ import './style.css';
       </div>
     </div>
   </nav>
-  
+
+  <!-- Votre composant Index s'affiche ici -->
+  <Index />
 </template>
 
 <style>
+body {
+  background-color: var(--background-one);
+  color: var(--text-one);
+}
+
 .navbar {
   background-color: var(--background-two);
+   z-index: 1050;
 }
 
 .navbar .nav-link,
