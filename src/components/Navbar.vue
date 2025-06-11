@@ -102,7 +102,7 @@ watch(isMobileSearchActive, (isActive) => {
 <style scoped>
 /* Style pour la Navbar */
 .navbar {
-  background-color: #0E181C!important; /* Couleur de fond blanche */
+  background-color: #0E181C!important; /* Couleur de fond */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
@@ -113,16 +113,19 @@ watch(isMobileSearchActive, (isActive) => {
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
+.nav-link:hover,
+.nav-link.active {
+  color: #BEEDFF; /* Couleur bleue de Bootstrap pour l'état actif/survol */
+}
+/* Style pour l'icone recherche */
 .loupe {
   padding: 0 10px;
   background: #50A0BD;
   border-radius: 20px;
 }
-.nav-link:hover,
-.nav-link.active {
-  color: #BEEDFF; /* Couleur bleue de Bootstrap pour l'état actif/survol */
+i.bi.bi-search{
+  color: #E7FFFC; /* Couleur de l'icône de recherche */
 }
-
 /* Style pour le burger */
 .navbar-toggler {
   border-color: transparent; /* Supprime la bordure du bouton burger */
