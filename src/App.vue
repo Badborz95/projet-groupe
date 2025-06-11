@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Index from './components/index.vue';
+import Defilement from './components/Defilement.vue'
 </script>
 
 <template>
@@ -48,6 +49,8 @@ import Index from './components/index.vue';
 
   <!-- Votre composant Index s'affiche ici -->
   <Index />
+  <Defilement />
+  
 </template>
 
 <style>
