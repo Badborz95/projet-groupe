@@ -1,6 +1,21 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import './style.css';
+import defilement from './componentss/Defilement.vue';
+
+import { ref } from 'vue';
+
+/*const games = ref([
+  {
+    id: 1,
+    titre: 'GTA6',
+    contenu: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci atque similique qui mollitia quo nostrum aperiam autem excepturi dolorum a nobis, fuga consectetur et, sed reiciendis architecto temporibus illum eius.'
+  },
+  {
+    id: 2,
+    titre: 'The Witcher 4', 
+    contenu: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci atque similique qui mollitia quo nostrum aperiam autem excepturi dolorum a nobis, fuga consectetur et, sed reiciendis architecto temporibus illum eius.'
+  }
+]);*/
 </script>
 
 <template>
@@ -40,6 +55,9 @@ import './style.css';
       </div>
     </div>
   </nav>
+
+
+<defilement/>
   
 </template>
 
