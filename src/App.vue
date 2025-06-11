@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Index from './components/index.vue';
 import Defilement from './components/Defilement.vue'
+import Comments from './components/Comments.vue';
 </script>
 
 <template>
@@ -50,6 +51,7 @@ import Defilement from './components/Defilement.vue'
   <!-- Votre composant Index s'affiche ici -->
   <Index />
   <Defilement />
+  <Comments/>
   
 </template>
 

@@ -1,24 +1,10 @@
 <template>
-  <!--<div class="container">
-    <ul>
-      <h2>Promo Games:</h2>
-      <li v-for="game in games" :key="game.id">
-        <div class="game">
-          <h3>Titre: {{ game.titre }}</h3> |
-          <p>Résumé: {{ game.contenu }}</p> |
-        </div>
-      </li>
-    </ul>
-  </div>-->
-
-
   <div class="container-fluid py-2">
     <h2 class="font-weight-light">Promo Games</h2>
     <div>
       <ul class="media-scroller snaps-inline">
         <li v-for="game in games" :key="game.id">
           <div class="game-card">
-            <!--<img :src="game.image" :alt="game.titre" />-->
             <a :href="game.link"><img :src="game.image" :alt="game.titre" /></a>
             <div class="game-text">
               <h3 class="titre">{{ game.titre }} :</h3>
@@ -80,12 +66,7 @@ const games = ref([
     price: '30€'
   },
 ])
-/*const props = defineProps({
-  games: {
-    type: Array,
-    default: []
-  }
-})*/
+
 
 </script>
 
@@ -170,9 +151,6 @@ a {
   .media-scroller {
     grid-auto-columns: 13%;
     gap: 200px;
-
-
-
   }
 }
 </style>
