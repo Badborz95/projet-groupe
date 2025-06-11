@@ -8,23 +8,25 @@
       <router-view />
     </main>
   </div>
-</template>
-
 <script setup>
 // Utilisation de <script setup> pour une syntaxe plus concise
 import Navbar from './components/Navbar.vue'
 </script>
 
 <style>
-/* Vous pouvez ajouter des styles globaux ici */
-body {
-  background-color: #f8f9fa; /* Un fond gris clair pour le corps de la page */
-}
-
 #app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+=======
+body {
+  background-color: var(--background-one);
+  color: var(--text-one);
+}
+
+.navbar {
+  background-color: var(--background-two);
+   z-index: 1050;
 }
 
 main.container {
