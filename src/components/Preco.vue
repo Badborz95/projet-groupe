@@ -39,7 +39,7 @@ const games = ref([
   },
   {
     id: 3,
-    titre: 'Elden ring : Nightrein',
+    titre: 'Elden ring  Nightrein',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
     image: '/assets/img/nightrein.png',
     price: '30€'
@@ -60,6 +60,20 @@ const games = ref([
   },
   {
     id: 6,
+    titre: 'GTA6',
+    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
+    image: '',
+    price: '30€'
+  },
+    {
+    id: 7,
+    titre: 'Clair Obscur : Expedition 33',
+    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
+    image: '/assets/img/Clair_Obscur.jpg',
+    price: '30€'
+  },
+  {
+    id: 8,
     titre: 'GTA6',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
     image: '',
@@ -123,6 +137,7 @@ a {
   border-radius: 5%;
 }
 
+
 .game-card img:hover {
   box-shadow: 4px 5px 17px -4px #268391;
 }
@@ -143,7 +158,7 @@ a {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 25%;
-  gap: 100px;
+  gap: 150px;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-inline: contain;
@@ -170,6 +185,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-flow: row;
   padding-right: 50px;
+  gap: 50px;
 }
   .game-card {
     width: 350px;
@@ -178,7 +194,7 @@ a {
   }
 
   .game-text {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
 }

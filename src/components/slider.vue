@@ -311,6 +311,7 @@ const changeFavoriteImage = (index) => {
 .game-info {
   width: 100%;
   max-width: 300px;
+  max-height: 250px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
