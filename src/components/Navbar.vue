@@ -4,7 +4,7 @@
       <!-- Logo à gauche -->
       <router-link class="navbar-brand fw-bold me-auto" to="/">
         <img
-          src="../../public/assets/img/Logo.png"
+          src="/assets/img/Logo.png"
           alt="Logo"
           width="150"
           height="50"
