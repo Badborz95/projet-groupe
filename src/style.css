@@ -11,7 +11,7 @@
     --solid-two: #4394B0;
     --text-one : #76C6E3;
     --text-two : #BCEAFC;
-    --text-high-contrast: #000000;
+    --text-high-contrast: #FFFFFFFF;
 }
 
 .light-mode {
@@ -27,6 +27,6 @@
     --solid-two: #5A949B;
     --text-one : #3F7980;
     --text-two : #083E43;
-    --text-high-contrast: #ffffff;
+    --text-high-contrast: #000000;
 }
     

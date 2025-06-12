@@ -1,3 +1,15 @@
+<script setup>
+import './style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+import Navbar from './components/Navbar.vue'
+import Slider from './components/slider.vue';
+import Defilement from './components/Defilement.vue';
+</script>
+
+
+
 <template>
   <div id="app-wrapper">
     <!-- La barre de navigation s'affichera sur toutes les pages -->
@@ -7,18 +19,19 @@
     <main class="container my-4">
       <router-view />
     </main>
+      <Slider />
   </div>
-<script setup>
-// Utilisation de <script setup> pour une syntaxe plus concise
-import Navbar from './components/Navbar.vue'
-</script>
+</template>
+
+
 
 <style>
 #app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-=======
+}
+
 body {
   background-color: var(--background-one);
   color: var(--text-one);
