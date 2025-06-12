@@ -1,6 +1,12 @@
+<script setup>
+import Slider from '../components/slider.vue';
+import Defilement from '../components/Defilement.vue';
+import Promo from '../components/Promo.vue';
+</script>
+
 <template>
-  <div class="text-center">
-    <h1 class="display-4">Page d'Accueil</h1>
-    <p class="lead">Bienvenue sur notre site !</p>
-  </div>
+  <Slider />
+  <Defilement />
+  <Promo />
 </template>
+
