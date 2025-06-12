@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
 </script>
 
@@ -15,12 +16,12 @@ import Navbar from './components/Navbar.vue'
     <!-- La balise router-view affichera le composant de la page actuelle -->
     <main class="container-fluid p-0 ">
       <router-view />
+    </main>
+    <!-- Footer -->
+     <Footer />
+    <!-- Fin du Footer -->
   </div>
 </template>
-<script setup>
-// Utilisation de <script setup> pour une syntaxe plus concise
-import Navbar from './components/Navbar.vue'
-</script>
 
 <style>
 #app-wrapper {
