@@ -12,7 +12,6 @@ import Footer from './components/Footer.vue'
   <div id="app-wrapper">
     <!-- La barre de navigation s'affichera sur toutes les pages -->
     <Navbar />
-
     <!-- La balise router-view affichera le composant de la page actuelle -->
     <main class="container-fluid p-0 ">
       <router-view />

@@ -46,8 +46,8 @@
               <i class="bi bi-search"></i>
             </button>
           </form>
-          <a href="#" class="nav-link fs-5 text ms-2"><i class="bi bi-person-circle"></i></a>
-          <a href="#" class="nav-link fs-5 text ms-2"><i class="bi bi-cart3"></i></a>
+          <a href="/connexion" class="nav-link fs-5 text ms-2"><i class="bi bi-person-circle"></i></a>
+          <a href="/panier" class="nav-link fs-5 text ms-2"><i class="bi bi-cart3"></i></a>
         </div>
       </div>
     </div>
