@@ -66,7 +66,7 @@ export default {
       langues: [
         { value: 'fr', text: 'Français' },
         { value: 'en', text: 'Anglais' },
-        { value: 'es', 'text': 'Espagnol' }
+        { value: 'es', text: 'Espagnol' }
       ],
       devises: [
         { value: 'EUR', text: 'Euro (€)' },
