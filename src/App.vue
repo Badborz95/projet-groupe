@@ -7,11 +7,15 @@
     <main class="container my-4">
       <router-view />
     </main>
+    <!-- Le pied de page s'affichera sur toutes les pages -->
+     <Footer />
   </div>
 </template>
 <script setup>
 // Utilisation de <script setup> pour une syntaxe plus concise
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+import { db } from './firebase/index.js'
 </script>
 
 <style>
