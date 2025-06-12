@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <!-- Logo à gauche -->
         <router-link class="navbar-brand fw-bold me-auto" to="/">
-          <img src="../assets/logo.png" alt="Logo" width="150" height="50" class="d-inline-block align-text-top">
+          <img src="../../public/assets/img/Logo.png" alt="Logo" width="150" height="50" class="d-inline-block align-text-top">
         </router-link>
         <!-- Section centrale mobile : Icône de recherche OU barre de recherche -->
         <div class="d-flex d-lg-none flex-grow-1 justify-content-center mx-2">
