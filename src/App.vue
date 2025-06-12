@@ -46,12 +46,15 @@ import Comments from './components/Comments.vue';
         </form>
       </div>
     </div>
+    
   </nav>
 
   <!-- Votre composant Index s'affiche ici -->
   <Index />
   <Defilement />
   <Comments/>
+
+
   
 </template>
 
