@@ -39,7 +39,7 @@ const games = ref([
   },
   {
     id: 3,
-    titre: 'Elden ring : Nightrein',
+    titre: 'Elden ring Nightrein',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
     image: '/assets/img/nightrein.png',
     price: '30€'
@@ -93,7 +93,7 @@ a {
 .game-card h3 {
   margin-left: 10px;
   margin-top: 5px;
-  font-size: 1.5em
+  font-size: 1.3em
 }
 
 .game-card .game-text {
@@ -129,8 +129,9 @@ a {
   }
 
   .media-scroller {
-    grid-auto-columns: 13%;
-    gap: 200px;
+    gap: 120px;
+    justify-content: center;
+
   }
 }
 </style>
