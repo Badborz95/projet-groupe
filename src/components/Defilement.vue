@@ -1,24 +1,10 @@
 <template>
-  <!--<div class="container">
-    <ul>
-      <h2>Promo Games:</h2>
-      <li v-for="game in games" :key="game.id">
-        <div class="game">
-          <h3>Titre: {{ game.titre }}</h3> |
-          <p>Résumé: {{ game.contenu }}</p> |
-        </div>
-      </li>
-    </ul>
-  </div>-->
-
-
   <div class="container-fluid py-2">
     <h2 class="font-weight-light">Promo Games</h2>
     <div>
       <ul class="media-scroller snaps-inline">
         <li v-for="game in games" :key="game.id">
           <div class="game-card">
-            <!--<img :src="game.image" :alt="game.titre" />-->
             <a :href="game.link"><img :src="game.image" :alt="game.titre" /></a>
             <div class="game-text">
               <h3 class="titre">{{ game.titre }} :</h3>
@@ -35,72 +21,57 @@
 <script setup>
 
 import { ref } from 'vue';
+import '../style.css';
 const games = ref([
   {
     id: 1,
     titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: 'https://gaming-cdn.com/img/products/16874/hcover/1920x620/16874.jpg?v=1749121677',
+    image: '/assets/img/gtavi.png',
     price: '30€'
   },
   {
     id: 2,
-    titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
+    titre: 'Metaphor : re fantazio',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
+    image: '/assets/img/metaphor.png',
     price: '30€'
   },
   {
     id: 3,
-    titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
+    titre: 'Elden ring : Nightrein',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
+    image: '/assets/img/nightrein.png',
     price: '30€'
   },
   {
     id: 4,
-    titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
+    titre: 'The Last of us : Part 2 Remastered',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
+    image: '/assets/img/TLOU2.jpg',
     price: '30€'
   },
   {
     id: 5,
-    titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
+    titre: 'Clair Obscur : Expedition 33',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
+    image: '/assets/img/Clair_Obscur.jpg',
     price: '30€'
   },
   {
     id: 6,
     titre: 'GTA6',
-    contenu: 'Lorem ipsum dolor ',
     link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
     image: '',
     price: '30€'
   },
 ])
-/*const props = defineProps({
-  games: {
-    type: Array,
-    default: []
-  }
-})*/
+
 
 </script>
 
 
 <style>
-.card-body {
-  min-height: 300px;
-  min-width: 300px;
-  margin-right: 5px;
-}
 
 ul {
   list-style: none;
@@ -141,7 +112,8 @@ a {
 
 .game-card h3 {
   margin-left: 10px;
-  margin-top: 7px;
+  margin-top: 5px;
+  font-size: 1.5em
 }
 
 .game-card .game-text {
@@ -156,7 +128,9 @@ a {
   grid-auto-columns: 25%;
   gap: 100px;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-inline: contain;
+  scrollbar-color: var(--interactive-comp-two) var(--interactive-comp-one);
 }
 
 .snaps-inline {
@@ -177,9 +151,6 @@ a {
   .media-scroller {
     grid-auto-columns: 13%;
     gap: 200px;
-
-
-
   }
 }
 </style>
