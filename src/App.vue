@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Navbar from './components/Navbar.vue'
 import Slider from './components/slider.vue';
 import Defilement from './components/Defilement.vue';
+import Comments from './components/Comments.vue';
 </script>
 
 
@@ -20,6 +21,9 @@ import Defilement from './components/Defilement.vue';
       <router-view />
     </main>
       <Slider />
+
+      <Defilement/>
+      <Comments/>
   </div>
 </template>
 
