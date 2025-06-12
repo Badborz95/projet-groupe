@@ -2,7 +2,7 @@
   <div class="container-fluid py-2 commentaires">
     <h2 class="font-weight-light">{{ comms.length }} Commentaires :</h2>
     <div>
-      <ul class="media-scroller snaps-inline comms">
+      <ul class="media-scroller snaps-inline comms" id="commentairesIn">
         <li v-for="comm in comms" :key="comm.id">
           <div class="comm-card">
             <div class="small">
@@ -133,6 +133,7 @@ a {
   flex-direction: column;
   background-color: var(--border-separator-three);
   padding: 10px;
+  margin-bottom: 20px;
 
 }
 
@@ -156,7 +157,7 @@ a {
 }
 
 
-.media-scroller {
+#commentairesIn {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 25%;
@@ -191,9 +192,6 @@ a {
 }
 
 @media (max-width: 1000px) {
-  .media-scroller {
-    gap: 120px;
-  }
 
   .comm-card {
     width: 200px;
@@ -225,7 +223,7 @@ a {
 
 
 
-  .media-scroller {
+  #commentairesIn {
     grid-auto-columns: 13%;
     gap: 200px;
   }

@@ -15,7 +15,6 @@ import Navbar from './components/Navbar.vue'
     <!-- La balise router-view affichera le composant de la page actuelle -->
     <main class="container-fluid p-0 ">
       <router-view />
-    </main> 
   </div>
 </template>
 
