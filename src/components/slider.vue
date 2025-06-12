@@ -90,6 +90,7 @@ const imageHero = [
 ];
 
 
+// Informations sur les jeux
 const gameInfo = ref([
   { name: 'Grand Thief Auto VI', description: 'lorem ipsum', price: '59.99€', },
   { name: 'Metaphor: ReFantazio', description: 'lorem ipsum', price: '49.99€', },
@@ -99,12 +100,13 @@ const gameInfo = ref([
 ]);
 
 const currentIndex = ref(0);
-const isFading = ref(false);
-const favorites = ref([false, false, false, false, false]);
+const isFading = ref(false); 
+const favorites = ref([false, false, false, false, false]); // Tableau pour les favoris
 
-const prevIndex = computed(() => (currentIndex.value - 1 + imagesPrevu.value.length) % imagesPrevu.value.length);
-const nextIndex = computed(() => (currentIndex.value + 1) % imagesPrevu.value.length);
+const prevIndex = computed(() => (currentIndex.value - 1 + imagesPrevu.value.length) % imagesPrevu.value.length); // Index de l'image précédente
+const nextIndex = computed(() => (currentIndex.value + 1) % imagesPrevu.value.length); // Index de l'image suivante
 
+// Fonction pour obtenir les images visibles
 const visibleSlides = computed(() => {
   const len = imagesPrevu.value.length;
   return [
@@ -114,6 +116,7 @@ const visibleSlides = computed(() => {
   ];
 });
 
+// Fonction pour obtenir les petites images latérales
 const smallSlides = computed(() => {
   const len = imagesPrevu.value.length;
   return [
@@ -139,7 +142,7 @@ function resetAutoSlide() {
   }, 6000);
 }
 
-onMounted(() => {
+onMounted(() => { 
   resetAutoSlide();
 });
 
@@ -159,13 +162,14 @@ const next = () => {
 
 const prev = () => {
   isFading.value = true;
-  setTimeout(() => {
+  setTimeout(() => { // Simule un délai pour l'effet de fondu
     currentIndex.value = (currentIndex.value - 1 + imagesPrevu.value.length) % imagesPrevu.value.length;
     isFading.value = false;
     resetAutoSlide(); // reset timer
   }, 500);
 };
 
+// Fonction pour gérer le clic sur les slides
 const handleSlideClick = (i) => {
   if (i === 0) prev();
   if (i === 2) next();
@@ -188,44 +192,6 @@ const changeFavoriteImage = (index) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@media (min-width: 1200px) {
-  .carousel-container {
-    max-width: 100%;
-    min-height: 400px;
-  }
-
-  .slide img {
-    margin-top: 50px;
-  }
-
-  .controls {
-    position: absolute;
-    top: 80% !important;
-    left: 30% !important;
-    right: 30% !important;
-    display: flex;
-    justify-content: space-between;
-    z-index: 3;
-  }
-
-
-  .game-info {
-    width: 100%;
-    max-width: 400px !important;
-    margin-right: auto;
-    margin-left: 40px !important;
-    margin-bottom: 10px;
-    text-align: left !important;
-    border-radius: 12px;
-    padding: 16px;
-  }
-
-  .game-info h2,
-  .game-info p {
-    text-align: left;
-  }
 }
 
 
@@ -356,5 +322,44 @@ const changeFavoriteImage = (index) => {
   z-index: 2;
   border-radius: 12px;
   padding: 15px;
+}
+
+
+@media (min-width: 1200px) {
+  .carousel-container {
+    max-width: 100%;
+    min-height: 400px;
+  }
+
+  .slide img {
+    margin-top: 50px;
+  }
+
+  .controls {
+    position: absolute;
+    top: 80% !important;
+    left: 30% !important;
+    right: 30% !important;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+  }
+
+
+  .game-info {
+    width: 100%;
+    max-width: 400px !important;
+    margin-right: auto;
+    margin-left: 40px !important;
+    margin-bottom: 10px;
+    text-align: left !important;
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .game-info h2,
+  .game-info p {
+    text-align: left;
+  }
 }
 </style>
