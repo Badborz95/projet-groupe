@@ -8,7 +8,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // Importer le JS de Bootstrap (nécessaire pour les composants interactifs comme le menu hamburger)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-const app = createApp(App)
+// Import global de Bootstrap et Firebase (Firebase est déjà initialisé dans firebase.js)
+import './firebase';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+const app = createApp(App)
 app.use(router)
 app.mount('#app')
