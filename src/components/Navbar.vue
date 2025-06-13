@@ -84,7 +84,7 @@ const toggleCollapse = () => {
 <style scoped>
 /* Style pour la Navbar */
 .navbar {
-  background-color: #0E181C !important;
+  background-color: var(--background-two)!important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

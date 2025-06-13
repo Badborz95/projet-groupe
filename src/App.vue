@@ -2,7 +2,6 @@
 // Importation CSS centralisée dans main.js (donc pas ici)
 import './style.css';
 </script>
-
 <template>
   <div id="app-wrapper">
     <main class="container-fluid p-0 flex-fill">
@@ -25,12 +24,6 @@ import './style.css';
   color: var(--text-one);
   margin: 0;
   font-family: sans-serif;
-}
-
-/* Navbar fixe avec z-index */
-.navbar {
-  background-color: var(--background-two);
-  z-index: 1050;
 }
 
 /* Correction du sélecteur : container-fluid au lieu de container */
