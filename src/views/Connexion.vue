@@ -167,7 +167,7 @@ async function handleGoogleSignIn() {
 @media (max-width: 767.98px) {
   /* Sur les petits écrans, l'image disparaît */
   .col-md-6.d-none.d-md-flex {
-    display: none !1important;
+    display: none !important;
   }
   /* La carte occupe toute la largeur et a des coins arrondis des deux côtés */
   .card {
