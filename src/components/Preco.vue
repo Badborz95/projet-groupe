@@ -5,7 +5,7 @@
       <ul class="media-scroller snaps-inline" id='precoIn'>
         <li v-for="game in games" :key="game.id">
           <div class="game-card">
-            <a :href="game.link"><img :src="game.image" :alt="game.titre" /></a>
+            <a :href="game.link"><img :src="`/assets/img/preview/${game.image}`" :alt="game.titre" /></a>
             <div class="game-text">
               <h3 class="titre">{{ game.titre }}</h3>
               <h3 class="prix">{{ game.price }}</h3>
@@ -19,71 +19,56 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore'; 
+import { db } from '../firebase/index.js'; 
+import '../style.css'; 
 
-import { ref } from 'vue';
-import '../style.css';
-const games = ref([
-  {
-    id: 1,
-    titre: 'GTA6',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/gtavi.png',
-    price: '30€'
-  },
-  {
-    id: 2,
-    titre: 'Metaphor : re fantazio',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/metaphor.png',
-    price: '30€'
-  },
-  {
-    id: 3,
-    titre: 'Elden ring  Nightrein',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/nightrein.png',
-    price: '30€'
-  },
-  {
-    id: 4,
-    titre: 'The Last of us : Part 2 Remastered',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/TLOU2.jpg',
-    price: '30€'
-  },
-  {
-    id: 5,
-    titre: 'Clair Obscur : Expedition 33',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/Clair_Obscur.jpg',
-    price: '30€'
-  },
-  {
-    id: 6,
-    titre: 'GTA6',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
-    price: '30€'
-  },
-    {
-    id: 7,
-    titre: 'Clair Obscur : Expedition 33',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/Clair_Obscur.jpg',
-    price: '30€'
-  },
-  {
-    id: 8,
-    titre: 'GTA6',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '',
-    price: '30€'
-  },
-])
+const games = ref([]);
 
+/*Fonction pour récupérer les jeux de la BDD Firebase*/
+const fetchAllGames = async () => {
+  const gamesRef = collection(db, 'games');
+  
+  //Obtention de la date d'aujourd'hui
+  const today = new Date();
+  // Mettre l'heure à 00:00:00.000 pour comparer avec le début de la journée.
+  today.setHours(0, 0, 0, 0); 
 
+  // Créer une requête pour récupérer les jeux dont la date de sortie est égale ou postérieure à aujourd'hui.
+  //    - where('dateSortie', '>=', today) : Filtre par date de sortie future ou égale à aujourd'hui
+  //    - orderBy('dateSortie') : Trie les résultats par date (nécessaire avec le filtre de plage)
+  const gamesQuery = query(
+    gamesRef,
+    where('dateSortie', '>=', today), 
+    orderBy('dateSortie'),              
+    limit(8)                           
+  );
+
+  try {
+    const querySnapshot = await getDocs(gamesQuery);
+    games.value = []; 
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      games.value.push({
+        id: doc.id,
+        titre: data.name, 
+        link: data.link, 
+        image: data.image, 
+        price: `${data.price}€`,
+      });
+    });
+  } catch (error) {
+    console.error('Erreur lors de la récupération des jeux :', error);
+  }
+};
+
+// Exécute la fonction de récupération des jeux quand le composant est monté
+onMounted(() => {
+  fetchAllGames();
+});
 </script>
-
 
 <style>
 ul {
@@ -130,7 +115,7 @@ a {
 .game-card img {
   inline-size: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: fill;
   display: grid;
   gap: 20px;
   grid-template-rows: min-content;
