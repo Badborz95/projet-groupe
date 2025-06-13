@@ -1,18 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-// Importer Bootstrap CSS et les icônes Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-
-// Importer le JS de Bootstrap (nécessaire pour les composants interactifs comme le menu hamburger)
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-// Import global de Bootstrap et Firebase (Firebase est déjà initialisé dans firebase.js)
-import './firebase';
+// Import Bootstrap (CSS + icons + JS)
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
+// Initialisation Firebase (déjà configuré dans ./firebase/index.js)
+import './firebase';
+
+const app = createApp(App);
+app.use(router);
+app.mount('#app');

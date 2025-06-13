@@ -1,45 +1,46 @@
 <script setup>
+// Importation CSS centralisée dans main.js (donc pas ici)
 import './style.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-import Navbar from './components/Navbar.vue'
-import Footer from './components/Footer.vue'
-
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
   <div id="app-wrapper">
-    <!-- La barre de navigation s'affichera sur toutes les pages -->
     <Navbar />
-    <!-- La balise router-view affichera le composant de la page actuelle -->
-    <main class="container-fluid p-0 ">
+    
+    <main class="container-fluid p-0 flex-fill">
       <router-view />
     </main>
-    <!-- Footer -->
-     <Footer />
-    <!-- Fin du Footer -->
+    
+    <Footer />
   </div>
 </template>
 
 <style>
+/* Structure principale avec Flexbox pour fixer le footer en bas */
 #app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-body {
+/* Si tu veux que le fond s'applique à tout le body */
+:global(body) {
   background-color: var(--background-one);
   color: var(--text-one);
+  margin: 0;
+  font-family: sans-serif;
 }
 
+/* Navbar fixe avec z-index */
 .navbar {
   background-color: var(--background-two);
-   z-index: 1050;
+  z-index: 1050;
 }
 
-main.container {
+/* Correction du sélecteur : container-fluid au lieu de container */
+main.container-fluid {
   flex: 1;
 }
 </style>

@@ -144,7 +144,8 @@ footer {
 .footer-button {
   /* On ajoute une marge pour l'espacer des liens au-dessus sur mobile */
   margin-top: 1rem;
-
+  /* On aligne le texte au centre pour les écrans plus petits */
+  text-align: center;
   /* Styles cosmétiques existants */
   background-color: #50A0BD;
   color: #FFFFFF;
@@ -159,19 +160,21 @@ footer {
   768px est le point de rupture "md" (medium) standard de Bootstrap.
 */
 @media (min-width: 990px) {
-  footer {
+  .footer-text {
     /* On aligne le texte à gauche pour les écrans plus larges */
-    text-align: left; 
+    text-align: left;
+  }
+  .footer-links {
+    /* On aligne les liens à gauche pour les écrans plus larges */
+    text-align: left;
   }
   .footer-button {
     /* On restaure le comportement "flottant" pour les grands écrans */
-    position: fixed;
+    position: relative;
     bottom: 20px;
-    right: 20px;
+    align-items: end;
     z-index: 1050;
-
     /* On retire la marge du haut qui n'est plus nécessaire */
-    margin-top: 0; 
   }
 }
 
