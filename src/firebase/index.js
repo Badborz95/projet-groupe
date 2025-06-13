@@ -3,7 +3,7 @@
 */
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { createBlock, setBlockTracking } from "vue";
 /* 
 */

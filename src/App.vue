@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
 </script>
 
@@ -16,6 +17,8 @@ import Navbar from './components/Navbar.vue'
     <main class="container-fluid p-0 ">
       <router-view />
     </main>
+
+    <Footer />
   </div>
 </template>
 
