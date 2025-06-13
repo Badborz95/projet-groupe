@@ -1,19 +1,13 @@
 <script setup>
 // Importation CSS centralisée dans main.js (donc pas ici)
 import './style.css';
-import Navbar from './components/Navbar.vue';
-import Footer from './components/Footer.vue';
 </script>
 
 <template>
   <div id="app-wrapper">
-    <Navbar />
-    
     <main class="container-fluid p-0 flex-fill">
       <router-view />
     </main>
-    
-    <Footer />
   </div>
 </template>
 
