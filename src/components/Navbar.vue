@@ -23,7 +23,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <!-- Contenu de la Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent" ref="collapseElement">
         <!-- Section centrale : Liens de navigation (Desktop) -->
@@ -48,6 +47,10 @@
           </form>
           <a href="/connexion" class="nav-link fs-5 text ms-2"><i class="bi bi-person-circle"></i></a>
           <a href="/panier" class="nav-link fs-5 text ms-2"><i class="bi bi-cart3"></i></a>
+          <button id="theme_btn" class="btn btn-primary " @click="toggleDarkMode">
+              <img v-if="isDarkMode" src="../../assets/img/sun.svg" alt="Light mode" width="24" height="24" />
+              <img v-else src="../../assets/img/moon.svg" alt="Dark mode" width="24" height="24" />
+            </button>
         </div>
       </div>
     </div>
@@ -58,15 +61,36 @@
 import { ref, onMounted } from 'vue';
 import { Collapse } from 'bootstrap';
 
+
 const collapseElement = ref(null);
 let bsCollapse = null;
 const isCollapsed = ref(false);
 
-// Pour assurer que le collapse est initialisé une fois le DOM prêt
+const isDarkMode = ref(true); // Gère l'état initial du mode sombre
+
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value;
+  updateBodyClass();
+};
+
+const updateBodyClass = () => {
+  if (isDarkMode.value) {
+    document.body.classList.add('dark-mode'); // Applique la classe 'dark-mode' au body
+  } else {
+    document.body.classList.remove('dark-mode'); // Retire la classe 'dark-mode' du body
+  }
+};
+
+
+const collapseElement = ref(null);
+let bsCollapse = null;
+const isCollapsed = ref(false);
+
 onMounted(() => {
   if (collapseElement.value) {
     bsCollapse = new Collapse(collapseElement.value, { toggle: false });
   }
+  updateBodyClass();
 });
 
 const toggleCollapse = () => {
@@ -90,7 +114,7 @@ const toggleCollapse = () => {
 
 .nav-link {
   font-weight: 500;
-  color: #E7FFFC;
+  color: var(--text-one) !important;
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
@@ -101,6 +125,30 @@ const toggleCollapse = () => {
 
 .navbar-toggler {
   border-color: transparent;
+
+  color: var(--text-one) !important;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(231,255,252,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--interactive-comp-two);
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--interactive-comp-three);
+  --bs-btn-hover-border-color: var(--border-separator-one);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--interactive-comp-three);;
+  --bs-btn-active-border-color: var(--border-separator-one);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--interactive-comp-two);
+  --bs-btn-disabled-border-color: var(--interactive-separator-one);
+
+
   color: #E7FFFC;
 }
 .navbar-toggler-icon {
