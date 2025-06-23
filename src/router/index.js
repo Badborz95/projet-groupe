@@ -6,6 +6,8 @@ import Accueil from '../views/Accueil.vue'
 import Nouveautes from '../views/Nouveautes.vue'
 import Precommandes from '../views/Precommandes.vue'
 import ProchainesSorties from '../views/ProchainesSorties.vue'
+import Inscription from '../views/Inscription.vue';
+import Connexion from '../views/Connexion.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +31,17 @@ const router = createRouter({
         path: '/prochaines-sorties',
         name: 'prochaines-sorties',
         component: ProchainesSorties
-    }
+    },
+    { 
+        path: '/inscription',
+        name: 'inscription', // Ajout d'un nom pour la route d'inscription
+        component: Inscription 
+    },
+    { 
+        path: '/connexion',
+        name: 'connexion', // Ajout d'un nom pour la route de connexion
+        component: Connexion 
+    },
     // Ajoutez d'autres routes ici si nécessaire
   ],
   // Cette fonction permet de styliser le lien actif dans la navbar
