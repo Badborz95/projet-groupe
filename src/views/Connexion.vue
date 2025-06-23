@@ -2,7 +2,7 @@
   <div class="login-page-wrapper vh-100 d-flex align-items-center justify-content-center">
     <div class="login-card-container d-flex shadow-lg">
       <div class="login-form-section p-4 d-flex flex-column justify-content-center align-items-center text-center">
-        <h2 class="login-title mb-4 text-white">Se connecter</h2>
+        <h2 class="login-title mb-4">Se connecter</h2>
 
         <div class="social-icons d-flex justify-content-center w-100 mb-4">
           <button @click="handleGoogleSignIn" class="btn social-icon-btn google-btn me-3" aria-label="Se connecter avec Google">
@@ -16,11 +16,11 @@
           </button>
         </div>
 
-        <div class="social-login-separator text-white-50 my-3">— ou —</div>
+        <div class="social-login-separator my-3">— ou —</div>
 
         <form @submit.prevent="handleLogin" class="w-100">
           <div class="form-group mb-3 text-start">
-            <label for="email" class="form-label text-uppercase text-white-50">Email</label>
+            <label for="email" class="form-label text-uppercase">Email</label>
             <input
               id="email"
               v-model="email"
@@ -31,7 +31,7 @@
             />
           </div>
           <div class="form-group mb-4 text-start">
-            <label for="password" class="form-label text-uppercase text-white-50">Mot de passe</label>
+            <label for="password" class="form-label text-uppercase ">Mot de passe</label>
             <input
               id="password"
               v-model="password"
@@ -71,6 +71,7 @@
 import { ref } from 'vue';
 import { signIn, signInWithGoogle, sendPasswordResetEmail } from '../services/authService';
 import { useRouter } from 'vue-router';
+import '../style.css'; 
 
 const email = ref('');
 const password = ref('');
@@ -113,7 +114,7 @@ async function handlePasswordReset() {
 <style scoped>
 /* Global Wrapper for the Login Page */
 .login-page-wrapper {
-  background-color: #01070A; /* Dark background color */
+  background-color: var(--background-one); /* Dark background color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +134,7 @@ async function handlePasswordReset() {
 
 /* Left Section: Login Form Styles */
 .login-form-section {
-  background-color: #01161e;
+  background-color: var(--interactive-comp-one);
   flex: 0 0 40%;
   padding: 40px !important;
   display: flex;
@@ -147,7 +148,7 @@ async function handlePasswordReset() {
   font-size: 2.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text-high-contrast);
   margin-bottom: 3rem;
   letter-spacing: 2px;
 }
@@ -161,13 +162,13 @@ async function handlePasswordReset() {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-high-contrast);
 }
 
 /* Input Fields */
 .login-input {
-  background-color: #012833;
-  border: 1px solid #004a60;
+  background-color: var(--interactive-comp-two);
+  border: 1px solid var(--border-separator-one);
   color: #fff;
   padding: 0.8rem 1rem;
   border-radius: 8px;
@@ -179,17 +180,17 @@ async function handlePasswordReset() {
 }
 
 .login-input:focus {
-  background-color: #013547;
-  border-color: #50A0BD;
+  background-color: var(--interactive-comp-three);
+  border-color: var(--border-separator-three);
   box-shadow: 0 0 0 0.25rem rgba(80, 160, 189, 0.25);
   color: #fff;
 }
 
 /* Main Button */
 .login-btn {
-  background-color: #50A0BD;
+  background-color: var(--interactive-comp-three);
   border: none;
-  color: #01161e;
+  color: var(--text-high-contrast);
   font-weight: bold;
   padding: 0.8rem 1rem;
   border-radius: 8px;
@@ -200,15 +201,15 @@ async function handlePasswordReset() {
 }
 
 .login-btn:hover {
-  background-color: #3a7c93;
-  color: #fff;
+  background-color: var(--interactive-comp-two);
+  color: var(--text-high-contrast);
 }
 
 /* Small links (e.g., S'inscrire, Mot de passe oublié, Retour) */
 .small-links {
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-high-contrast);
   margin-top: 1rem;
   width: 100%;
 }
@@ -218,14 +219,14 @@ async function handlePasswordReset() {
 }
 
 .small-links a:hover {
-  color: #50A0BD !important;
+  color: var(--text-one) !important;
 }
 
 /* Social Login Separator (Not present in this template, but keeping styles for consistency) */
 .social-login-separator {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-high-contrast);
   margin: 1rem 0;
   width: 100%;
 }

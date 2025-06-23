@@ -23,6 +23,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <!-- Contenu de la Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent" ref="collapseElement">
         <!-- Section centrale : Liens de navigation (Desktop) -->
@@ -80,11 +81,6 @@ const updateBodyClass = () => {
     document.body.classList.remove('dark-mode'); // Retire la classe 'dark-mode' du body
   }
 };
-
-
-const collapseElement = ref(null);
-let bsCollapse = null;
-const isCollapsed = ref(false);
 
 onMounted(() => {
   if (collapseElement.value) {
