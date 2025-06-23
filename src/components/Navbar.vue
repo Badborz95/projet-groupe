@@ -23,7 +23,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <!-- Contenu de la Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent" ref="collapseElement">
         <!-- Section centrale : Liens de navigation (Desktop) -->
@@ -62,6 +61,7 @@
 import { ref, onMounted } from 'vue';
 import { Collapse } from 'bootstrap';
 
+
 const collapseElement = ref(null);
 let bsCollapse = null;
 const isCollapsed = ref(false);
@@ -81,7 +81,11 @@ const updateBodyClass = () => {
   }
 };
 
-// Pour assurer que le collapse est initialisé une fois le DOM prêt
+
+const collapseElement = ref(null);
+let bsCollapse = null;
+const isCollapsed = ref(false);
+
 onMounted(() => {
   if (collapseElement.value) {
     bsCollapse = new Collapse(collapseElement.value, { toggle: false });
@@ -121,6 +125,7 @@ const toggleCollapse = () => {
 
 .navbar-toggler {
   border-color: transparent;
+
   color: var(--text-one) !important;
 }
 .navbar-toggler-icon {
@@ -143,5 +148,10 @@ const toggleCollapse = () => {
   --bs-btn-disabled-bg: var(--interactive-comp-two);
   --bs-btn-disabled-border-color: var(--interactive-separator-one);
 
+
+  color: #E7FFFC;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(231,255,252,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 </style>
