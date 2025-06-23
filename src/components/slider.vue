@@ -57,7 +57,6 @@
 </template>
 
 <script setup>
-import '../style.css';
 import { ref, computed } from 'vue';
 import { onMounted, onUnmounted } from 'vue';
 
@@ -181,7 +180,7 @@ const changeFavoriteImage = (index) => {
 
 </script>
 
-<style scoped>
+<style>
 .carousel-container {
   width: 100%;
   max-width: 900px;

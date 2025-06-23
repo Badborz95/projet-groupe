@@ -22,7 +22,6 @@
 import { ref, onMounted } from 'vue';
 import { collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore'; 
 import { db } from '../firebase/index.js'; 
-import '../style.css'; 
 
 const games = ref([]);
 
