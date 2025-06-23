@@ -70,6 +70,7 @@ onMounted(() => {
 </script>
 
 <style>
+
 ul {
   list-style: none;
   display: flex;
