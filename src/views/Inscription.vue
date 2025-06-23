@@ -150,7 +150,7 @@ async function handleGoogleSignIn() {
 <style scoped>
 /* Global Wrapper for the Login Page */
 .login-page-wrapper {
-  background-color: #01070A; /* Dark background color */
+  background-color: var(--background-one); /* Dark background color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +170,7 @@ async function handleGoogleSignIn() {
 
 /* Left Section: Login Form Styles */
 .login-form-section {
-  background-color: #01161e;
+  background-color: var(--interactive-comp-one);
   flex: 0 0 40%;
   padding: 40px !important;
   display: flex;
@@ -184,7 +184,7 @@ async function handleGoogleSignIn() {
   font-size: 2.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text-high-contrast) !important;
   margin-bottom: 3rem;
   letter-spacing: 2px;
 }
@@ -198,14 +198,14 @@ async function handleGoogleSignIn() {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-high-contrast) !important;
 }
 
 /* Input Fields */
 .login-input {
-  background-color: #012833;
-  border: 1px solid #004a60;
-  color: #fff;
+  background-color: var(--interactive-comp-two);
+  border: 1px solid var(--border-separator-one);
+  color: var(--text-high-contrast);
   padding: 0.8rem 1rem;
   border-radius: 8px;
   font-size: 1rem;
@@ -216,17 +216,17 @@ async function handleGoogleSignIn() {
 }
 
 .login-input:focus {
-  background-color: #013547;
-  border-color: #50A0BD;
+  background-color: var(--interactive-comp-three);
+  border-color: var(--interactive-comp-four);
   box-shadow: 0 0 0 0.25rem rgba(80, 160, 189, 0.25);
   color: #fff;
 }
 
 /* Main Button */
 .login-btn {
-  background-color: #50A0BD;
+  background-color: var(--interactive-comp-three);
   border: none;
-  color: #01161e;
+  color: var(--text-high-contrast);
   font-weight: bold;
   padding: 0.8rem 1rem;
   border-radius: 8px;
@@ -237,32 +237,32 @@ async function handleGoogleSignIn() {
 }
 
 .login-btn:hover {
-  background-color: #3a7c93;
-  color: #fff;
+  background-color: var(--interactive-comp-two);
+  color: var(--text-high-contrast);
 }
 
 /* Small links (e.g., S'inscrire, Mot de passe oublié, Retour) */
 .small-links {
   font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-high-contrast);
   margin-top: 1rem;
   width: 100%;
 }
 
 .small-links a {
-    color: inherit;
+    color: inherit !important;
 }
 
 .small-links a:hover {
-  color: #50A0BD !important;
+  color: var(--text-one) !important;
 }
 
 /* Social Login Separator (Not present in this template, but keeping styles for consistency) */
 .social-login-separator {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-high-contrast);
   margin: 1rem 0;
   width: 100%;
 }
@@ -277,9 +277,9 @@ async function handleGoogleSignIn() {
 }
 
 .social-icon-btn {
-  background-color: #012833;
-  border: 1px solid #004a60;
-  color: #fff;
+  background-color: var(--interactive-comp-one);
+  border: 1px solid var(--border-separator-one);
+  color: var(--text-high-contrast);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -291,8 +291,8 @@ async function handleGoogleSignIn() {
 }
 
 .social-icon-btn:hover {
-  background-color: #004a60;
-  border-color: #50A0BD;
+  background-color: var(--interactive-comp-two);
+  border-color: var(--interactive-comp-three);
 }
 
 .google-btn i { color: #DB4437; }
@@ -341,7 +341,7 @@ async function handleGoogleSignIn() {
 
 .close-button:hover {
   background-color: rgba(0, 0, 0, 0.6); /* Fond plus sombre au survol */
-  color: #50A0BD; /* Couleur d'accent au survol */
+  color: var(--interactive-comp-four); /* Couleur d'accent au survol */
 }
 
 /* Media Queries for Responsiveness */
