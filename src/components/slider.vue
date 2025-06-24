@@ -57,8 +57,14 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { collection, getDocs, query, where } from 'firebase/firestore'; 
+import { db } from '../firebase/index.js'; 
+
+const games = ref([]);
+
+// Liste des IDs des jeux à afficher
+const selectedIds = ['tEZ8WKToNXRdUw30WBpN', 'ouRWQoFisMSRMbu5RncX', 'HT3qJHVa9pXQJZSXRkQR', 'HuvvEF5GQmSZ7ylXW1zW', 'ZuL3BlFzp83IyXuTQ4DF'];
 
 //Importation des images
 const imagesPrevu = ref([
@@ -180,7 +186,7 @@ const changeFavoriteImage = (index) => {
 
 </script>
 
-<style>
+<style scoped>
 .carousel-container {
   width: 100%;
   max-width: 900px;
