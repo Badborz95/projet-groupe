@@ -57,17 +57,22 @@
 </template>
 
 <script setup>
-import '../style.css';
-import { ref, computed } from 'vue';
-import { onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { collection, getDocs, query, where } from 'firebase/firestore'; 
+import { db } from '../firebase/index.js'; 
+
+const games = ref([]);
+
+// Liste des IDs des jeux à afficher
+const selectedIds = ['tEZ8WKToNXRdUw30WBpN', 'ouRWQoFisMSRMbu5RncX', 'HT3qJHVa9pXQJZSXRkQR', 'HuvvEF5GQmSZ7ylXW1zW', 'ZuL3BlFzp83IyXuTQ4DF'];
 
 //Importation des images
 const imagesPrevu = ref([
-  { src: '/assets/img/gtavi.png', alt: 'Image 1' },
-  { src: '/assets/img/metaphor.png', alt: 'Image 2' },
-  { src: '/assets/img/nightrein.png', alt: 'Image 3' },
-  { src: '/assets/img/TLOU2.jpg', alt: 'Image 4' },
-  { src: '/assets/img/Clair_Obscur.jpg', alt: 'Image 5' }
+  { src: '/assets/img/icon/gtavi.png', alt: 'Image 1' },
+  { src: '/assets/img/icon/metaphor.png', alt: 'Image 2' },
+  { src: '/assets/img/icon/nightrein.png', alt: 'Image 3' },
+  { src: '/assets/img/icon/TLOU2.jpg', alt: 'Image 4' },
+  { src: '/assets/img/icon/Clair_Obscur.jpg', alt: 'Image 5' }
 ]);
 
 // Liens des jeux
@@ -194,7 +199,6 @@ const changeFavoriteImage = (index) => {
   align-items: center;
 }
 
-
 .carousel-container::before {
   content: "";
   position: absolute;
@@ -227,6 +231,8 @@ const changeFavoriteImage = (index) => {
   filter: blur(0.5px);
   width: 25%;
   z-index: 1;
+  
+  
 }
 
 .slide.active {
@@ -240,7 +246,10 @@ const changeFavoriteImage = (index) => {
     transform 0.5s cubic-bezier(0.10, 1, 0.36, 1),
     cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.5s;
+    
+
 }
+
 
 .slide.active :hover {
   cursor: pointer;
@@ -259,6 +268,7 @@ const changeFavoriteImage = (index) => {
   width: 25%;
   z-index: 1;
 }
+
 
 .controls {
   position: absolute;
@@ -311,6 +321,7 @@ const changeFavoriteImage = (index) => {
 .game-info {
   width: 100%;
   max-width: 300px;
+  max-height: 250px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;

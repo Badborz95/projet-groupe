@@ -5,7 +5,7 @@
       <ul class="media-scroller snaps-inline">
         <li v-for="game in games" :key="game.id">
           <div class="game-card">
-            <a :href="game.link"><img :src="game.image" :alt="game.titre" /></a>
+            <a :href="game.link"><img :src="`/assets/img/preview/${game.image}`" :alt="game.titre" /></a>
             <div class="game-text">
               <h3 class="titre">{{ game.titre }} :</h3>
               <h3 class="prix">{{ game.price }}</h3>
@@ -20,33 +20,42 @@
 
 <script setup>
 
-import { ref } from 'vue';
-import '../style.css';
-const games = ref([
-  {
-    id: 1,
-    titre: 'GTA6',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/gtavi.png',
-    price: '30€'
-  },
-  {
-    id: 2,
-    titre: 'Metaphor : re fantazio',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/metaphor.png',
-    price: '30€'
-  },
-  {
-    id: 3,
-    titre: 'Elden ring : Nightrein',
-    link: 'https://www.instant-gaming.com/en/?utm_source=google&utm_medium=cpc&utm_campaign=1946835326&utm_content=70498383293&utm_term=instant-gaming&gad_source=1&gad_campaignid=1946835326&gbraid=0AAAAADNzuvUzP5sO622yfpIX7-Pv62d5-&gclid=CjwKCAjwz_bABhAGEiwAm-P8YSiMjwE8PZKO-6mksYNGofakinXgjnExR-kfiqR9vSXm7lq3mKYWDRoCsXgQAvD_BwE',
-    image: '/assets/img/nightrein.png',
-    price: '30€'
+import { ref, onMounted } from 'vue';
+import { collection, getDocs, query, where } from 'firebase/firestore'; 
+import { db } from '../firebase/index.js'; 
+
+const games = ref([]);
+
+// Liste des IDs des jeux à afficher
+const selectedIds = ['kn9pH1dkwMBBF3YOvmvN', 'sTIYDzvGIubJuR7DOIaD', 'NUSTlf7nbt76DKvcEFmv']; // Remplace par tes vrais IDs
+
+const fetchAllGames = async () => {
+  const gamesRef = collection(db, 'games');
+  const gamesQuery = query(gamesRef, where('__name__', 'in', selectedIds));
+
+  try {
+    const querySnapshot = await getDocs(gamesQuery);
+    games.value = [];
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      games.value.push({
+        id: doc.id,
+        titre: data.name,
+        link: data.link,
+        image: data.image,
+        price: `${data.price}€`,
+      });
+    });
+  } catch (error) {
+    console.error('Erreur lors de la récupération des jeux :', error);
   }
-])
+};
 
+onMounted(() => {
+  fetchAllGames();
+});
 
+console.log('Résultat Firestore:', games.value);
 </script>
 
 
@@ -93,7 +102,7 @@ a {
 .game-card h3 {
   margin-left: 10px;
   margin-top: 5px;
-  font-size: 1.5em
+  font-size: 1.3em
 }
 
 .game-card .game-text {
@@ -129,8 +138,9 @@ a {
   }
 
   .media-scroller {
-    grid-auto-columns: 13%;
-    gap: 200px;
+    gap: 120px;
+    justify-content: center;
+
   }
 }
 </style>
