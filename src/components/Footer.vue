@@ -116,23 +116,22 @@ export default {
 </script>
 
 <style scoped>
-/* SEULE LA PARTIE STYLE EST MODIFIÉE */
 footer {
-  background-color: #01070A;
+  background-color: var(--background-two);
   padding: 1rem;
   /* Le text-align: center s'appliquera maintenant au bouton sur mobile */
   text-align: center; 
 }
 .footer-text {
-  color: #FFFFFF;
+  color: var(--text-high-contrast);
   margin: 0;
 }
 .footer-links {
-  color: #FFFFFF;
+  color: var(--text-high-contrast);
   margin: 0.5rem 0;
 }
 .footer-link {
-  color: #FFFFFF;
+  color: var(--text-high-contrast);
   text-decoration: none;
   margin: 0 0.5rem;
 }
@@ -147,8 +146,8 @@ footer {
   /* On aligne le texte au centre pour les écrans plus petits */
   text-align: center;
   /* Styles cosmétiques existants */
-  background-color: #50A0BD;
-  color: #FFFFFF;
+  background-color: var(--solid-one);
+  color: var(--text-high-contrast);;
   border-radius: 20px;
   padding: 0.5rem 1rem;
   cursor: pointer;
