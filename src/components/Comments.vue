@@ -91,7 +91,7 @@ const comms = ref([
 </script>
 
 
-<style>
+<style scoped>
 .commentaires {
   background-color: var(--interactive-comp-one);
   height: 250px;

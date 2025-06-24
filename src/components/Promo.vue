@@ -59,7 +59,7 @@ console.log('Résultat Firestore:', games.value);
 </script>
 
 
-<style>
+<style scoped>
 
 ul {
   list-style: none;
