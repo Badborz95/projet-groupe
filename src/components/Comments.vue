@@ -161,7 +161,7 @@ a {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 25%;
-  gap: 100px;
+  gap: 150px;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-inline: contain;
@@ -225,7 +225,7 @@ a {
 
   #commentairesIn {
     grid-auto-columns: 13%;
-    gap: 200px;
+    gap: 100px;
   }
 }
 </style>
