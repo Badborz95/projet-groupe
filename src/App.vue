@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.vue'
 import Slider from './components/slider.vue';
 import Defilement from './components/Defilement.vue';
 import Comments from './components/Comments.vue';
+import Logos from './components/Logos.vue'
 </script>
 
 
@@ -24,6 +25,7 @@ import Comments from './components/Comments.vue';
 
       <Defilement/>
       <Comments/>
+      <Logos/>
   </div>
 </template>
 
