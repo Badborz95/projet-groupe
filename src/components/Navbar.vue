@@ -43,8 +43,8 @@
               <i class="bi bi-search"></i>
             </button>
           </form>
-          <a href="/connexion" class="nav-link fs-5 text ms-2"><i class="bi bi-person-circle"></i></a>
-          <a href="/panier" class="nav-link fs-5 text ms-2"><i class="bi bi-cart3"></i></a>
+          <router-link class="nav-link fs-5 text ms-2" to="/connexion"><i class="bi bi-person-circle"></i></router-link>
+          <router-link class="nav-link fs-5 text ms-2" to="/panier"><i class="bi bi-cart3"></i></router-link>
           <button id="theme_btn" class="btn btn-primary " @click="toggleDarkMode">
             <img v-if="isDarkMode" src="/assets/img/sun.svg" alt="Light mode" width="24" height="24" />
             <img v-else src="/assets/img/moon.svg" alt="Dark mode" width="24" height="24" />
