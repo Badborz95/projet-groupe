@@ -61,32 +61,18 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Collapse } from 'bootstrap';
+import { isDarkMode, toggleDarkMode } from '../services/darkMode.js'
 
 
 const collapseElement = ref(null);
 let bsCollapse = null;
 const isCollapsed = ref(false);
 
-const isDarkMode = ref(true); // Gère l'état initial du mode sombre
-
-const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value;
-  updateBodyClass();
-};
-
-const updateBodyClass = () => {
-  if (isDarkMode.value) {
-    document.body.classList.add('dark-mode'); // Applique la classe 'dark-mode' au body
-  } else {
-    document.body.classList.remove('dark-mode'); // Retire la classe 'dark-mode' du body
-  }
-};
-
 onMounted(() => {
   if (collapseElement.value) {
     bsCollapse = new Collapse(collapseElement.value, { toggle: false });
   }
-  updateBodyClass();
+
 });
 
 const toggleCollapse = () => {
