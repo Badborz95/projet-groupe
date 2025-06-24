@@ -6,6 +6,7 @@ import Accueil from '../views/Accueil.vue'
 import Nouveautes from '../views/Nouveautes.vue'
 import Precommandes from '../views/Precommandes.vue'
 import ProchainesSorties from '../views/ProchainesSorties.vue'
+import GameDetail from '../GameDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,11 @@ const router = createRouter({
         path: '/prochaines-sorties',
         name: 'prochaines-sorties',
         component: ProchainesSorties
+    },
+    {
+      path: '/games/gameId',
+      name: 'games/gameId',
+      component: GameDetail,
     }
     // Ajoutez d'autres routes ici si nécessaire
   ],
